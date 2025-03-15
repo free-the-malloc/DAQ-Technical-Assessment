@@ -5,7 +5,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 WORKDIR /app
 
 RUN apt-get update && \
-    apt-get install -y python3-pip \
+    apt-get install -y libxml2 libxml2-dev python3-pip \
     wget autoconf libtool git make g++ valgrind \
     cmake can-utils
 
@@ -19,5 +19,4 @@ RUN cd build/ && cmake ..
 
 RUN cd build/ && make -j    
 
-# ENTRYPOINT ["./build/solution/answer"]
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["./build/solution/answer"]

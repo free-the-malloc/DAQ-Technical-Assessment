@@ -3,6 +3,32 @@ Use this file to write your answer to Stage 2 of the firmware tasks.
 CAN
 Q1:
 
+Pros: It's not necessarily niche, as explored in the next question, a number
+ of STM32 microcontrollers come with in built CAN support. It's simplicity 
+ helps with deploying it, a CAN message frame is pretty straight forward in 
+ structure. It's structure in allowing for multiple sensor values to be held 
+ within a single frame allows for tailored organisation. It's also robust, 
+ there are five error checking mechanisms built in. It's also robust against 
+ electromagnetic interference through utilisation of differential transmission. 
+
+Cons: It's slower than other protocols, 1Mb/s for regular CAN and 5Mb/s for 
+CAN FD, as opposed USB 2.0+ which starts at 480Mb/s and PCIE which starts at 
+150MB/s.
+
 Q2:
 
+It's robustness would be a key reason. I would guess accurate sensor data would 
+be a top priority for a high performance competition vehicle. Through both 
+reducing the impact of electromagnetic interference as well as in-built error 
+checking, CAN is robust. It's also scalable which makes it ideal for a changing
+system. SPI and USB are limited to point-to-point communication which doesn't 
+make it ideal for a system involving multiple sensors. 
+
 STM32 Chip Selection
+
+A number of STM32F7 MCU's offer these capabilities. I've picked the STM32F777IIK7.
+
+It meets the requirements, I picked this one out of the STM32F777II chips due to it's
+higher maximum operating temperature. 
+It has a 1.7-3.6V power supply. Dimensions are 10x10x0.6mm. A single chip may 
+be purchased for $26.81.
